@@ -15,22 +15,22 @@ namespace Acme.CommonTest
             // Arrange
             var changedItems = new List<ILoggable>();
 
-            var customer = new Customer(1)
+            var customer = new Customer(10)
             {
                 EmailAddress = "fbaggins@hobbiton.me",
                 FirstName = "Frodo",
                 LastName = "Baggins",
                 AddressList = null
             };
-            changedItems.Add((ILoggable) customer);
+            changedItems.Add(customer);
 
-            var product = new Product(2)
+            var product = new Product(20)
             {
                 ProductName = "Rake",
                 ProductDescription = "Garden Rake with Steel Head",
                 CurrentPrice = 6M
             };
-            changedItems.Add((ILoggable) product);
+            changedItems.Add(product);
 
             // Act
             LoggingService.WriteToFile(changedItems);
